@@ -53,15 +53,15 @@
 			
 			<!-- Down direction -->
 		    <div class="fab ml">
-		        <button onmouseover="show_text('menu')" class="fab__primary btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Menu" tooltip-position="right">
+		        <button class="fab__primary btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Menu" tooltip-position="right">
 		            <i class="mdi mdi-menu"></i>
 		            <i class="mdi mdi-arrow-down"></i>
 		        </button>
 
 		        <div class="fab__actions fab__actions--down">
-		            <a href="#about" class="btn btn--l btn--black btn--fab" lx-ripple lx-tooltip="ABout Me" tooltip-position="right"><i class="mdi mdi-information" ></i></a>
+		            <a href="#about" class="btn btn--l btn--black btn--fab" lx-ripple lx-tooltip="About Me" tooltip-position="right"><i class="mdi mdi-information" ></i></a>
 
-		            <a href="#contact" class="btn btn--l btn--green btn--fab" lx-ripple lx-tooltip="Cnntact me" tooltip-position="right"><i class="mdi mdi-phone"></i></a>
+		            <a href="#contact" class="btn btn--l btn--green btn--fab" lx-ripple lx-tooltip="Contact me" tooltip-position="right"><i class="mdi mdi-phone"></i></a>
 
 		            <a href="#showcase" class="btn btn--l btn--red btn--fab" lx-ripple lx-tooltip="What I've done" tooltip-position="right"><i class="mdi mdi-folder-image"></i></a>
 
@@ -241,7 +241,7 @@
 		<section id="posts">
 			<div class="tc-white-1 mt++" flex-container="row" flex-gutter="24">
 				<div flex-item="1"></div>
-				<div flex-item="11" class="any-text">
+				<div flex-item="11" class="any-text" ng-controller="MyBlogController">
 					<div id="cd-timeline" class="cd-container">
 						<div class="cd-timeline-block">
 							<div class="cd-timeline-img cd-picture">
@@ -249,7 +249,7 @@
 							</div> <!-- cd-timeline-img -->
 
 							<div class="cd-timeline-content">
-								<h2>Title of section 1</h2>
+								<h2 ng-repeat="i in response_blog">{{i.title+', '+i.msg}}</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
 								<a href="#0" class="cd-read-more">Read more</a>
 								<div class="cd-date">

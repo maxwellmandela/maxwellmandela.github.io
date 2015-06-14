@@ -1,6 +1,10 @@
 var maxwellmandela = angular.module("MaxwellMandela", ['lumx']);
 
+/**
+* About me controller
+*/
 maxwellmandela.controller("AboutMeController", function($scope){
+
 	$scope.aboutme = [
 		{
 			"primary_data":[{
@@ -56,6 +60,9 @@ maxwellmandela.controller("AboutMeController", function($scope){
 
 });
 
+/**
+* My contact details controller
+*/
 maxwellmandela.controller("ContactController", function($scope){
 	$scope.contact_detail = [
 		{
@@ -79,4 +86,57 @@ maxwellmandela.controller("ContactController", function($scope){
 			"contact_title":"Nairobi, Kenya"
 		},
 	];
+});
+
+/**
+* My blog controller
+*/
+maxwellmandela.controller("MyBlogController", function($scope, MyBlog){
+	/*
+    ** The http response
+    */
+    $scope.items;
+
+    /**
+    * The status report
+    */
+    $scope.response_blog;
+    
+    getMyBlog();
+
+	function getMyBlog(){
+      MyBlog.getMyBlog().success(function (data, status, headers, config) {
+            /**
+            * Get recent posts from my blog
+            */
+            $scope.items = data;
+            $scope.response_blog = [
+            	{
+            		"title":"Nice!",
+            		"msg": "Hello it was success"
+            	}
+            ];
+        }).error(function (data, status, headers, config) {
+        	$scope.response_blog = [
+            	{
+            		"title":"Ooops!",
+            		"msg": "Hello it was not success"
+            	}
+            ];
+        });
+    }
+
+});
+
+/**
+* Content is king
+* I pull data(recent posts) from my wordpress blog with this factory
+*/
+maxwellmandela.factory('MyBlog', function($http) {
+    var urlBase = 'http://iheard.wc.lt/user/subscriptions';
+    var MyBlog = {};
+    MyBlog.getMyBlog = function(){
+      return $http.get(urlBase);
+    };
+    return MyBlog;
 });
