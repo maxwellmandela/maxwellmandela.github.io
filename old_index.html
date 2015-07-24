@@ -169,6 +169,119 @@
 			    </div>
 			</div>
 		</section>
+
+		<section id="contact" ng-controller="ContactController">
+			<div class="tc-white-1 mt++" flex-container="row" flex-gutter="24">
+			    <div flex-item="3" class="p+ any-text"></div>
+
+			    <div flex-item="4" class="p+ any-text">
+			    	<span class="fs-title display-block mb">Reach Me</span>
+			        <div class="divider divider--dark"></div>
+			        <ul class="list mt++">
+			            <li class="list-row list-row--has-separator" ng-repeat="item in contact_detail">
+			                <div class="list-row__primary">
+			                    <i class="icon icon--s {{item.color}} icon--flat {{item.contact_icon}}"></i>
+			                </div>
+
+			                <div class="list-row__content">
+			                    <span>{{item.contact_title}}</span>
+			                </div>
+			            </li>
+			        </ul>
+			    </div>
+			    <div flex-item="1" class="p+"></div>
+			    <!-- quick email me -->
+			    <div flex-item="4" class="p+ any-text">
+			    	<span class="fs-title display-block mb">Quick Email me</span>
+			        <div class="divider divider--dark"></div>
+			    	<form>
+			            <lx-text-field label="First and last name" fixed-label="true" icon="account">
+			                <input type="text" ng-model="textFields.fixedFirstName">
+			            </lx-text-field>
+
+			            <lx-text-field label="Email address" fixed-label="true" icon="email">
+			                <input type="email" ng-model="textFields.fixedEmail">
+			            </lx-text-field>
+
+			            <lx-text-field label="Message" fixed-label="true" icon="message-text">
+			                <textarea type="text" ng-model="textFields.fixedAdress"></textarea>
+			            </lx-text-field>
+			        </form>
+			        <button class="btn btn--m btn--blue btn--raised" lx-ripple>Send</button>
+			    </div>
+			</div>
+		</section>
+
+		<section id="showcase">
+			<div class="tc-white-1 mt++" flex-container="row" flex-gutter="24">
+				<div flex-item="1"></div>
+				<div flex-item="4">
+				    <div class="p+">
+				    	<div class="card any-text">
+				    		<div class="card__img card__img--top">
+				               <!-- <img src="https://pbs.twimg.com/profile_images/507579275130593281/N_1ql-Sj.jpeg">-->
+				               <a href="https://pbs.twimg.com/profile_images/507579275130593281/N_1ql-Sj.jpeg" data-lightbox="get_lucky" data-title="Get Lucky">
+								<img class="" src="https://raw.githubusercontent.com/maxwellmandela/get_lucky/master/screenshot.png" alt="image-1" />
+								</a>
+				                <span class="fs-headline tc-white-1 display-block any-text">Get Lucky</span>
+				            </div>
+				            <div class="p+">
+				                <div class="paragraph fs-body-1 mt+ any-text">
+				                    <p>
+				                    	Hello this is gte lucky theme
+				                    </p>
+				                </div>
+				            </div>
+			        	</div>
+				    </div>
+			    </div>
+
+			    <div flex-item="4">
+				    <div class="p+">
+				    	<div class="card any-text">
+				    		<div class="card__img card__img--top">
+				               <!-- <img src="https://pbs.twimg.com/profile_images/507579275130593281/N_1ql-Sj.jpeg">-->
+				               <a href="https://pbs.twimg.com/profile_images/507579275130593281/N_1ql-Sj.jpeg" data-lightbox="get_lucky" data-title="Get Lucky">
+								<img class="" src="https://raw.githubusercontent.com/maxwellmandela/get_lucky/master/screenshot.png" alt="image-1" />
+								</a>
+				                <span class="fs-headline tc-white-1 display-block any-text">Get Lucky</span>
+				            </div>
+				            <div class="p+">
+				                <div class="paragraph fs-body-1 mt+ any-text">
+				                    <p>
+				                    	Hello this is gte lucky theme
+				                    </p>
+				                </div>
+				            </div>
+			        	</div>
+				    </div>
+			    </div>
+		    </div>
+		</section>
+
+		<section id="posts">
+			<div class="tc-white-1 mt++" flex-container="row" flex-gutter="24">
+				<div flex-item="1"></div>
+				<div flex-item="11" class="any-text" ng-controller="MyBlogController">
+					<div id="cd-timeline" class="cd-container">
+						<div class="cd-timeline-block">
+							<div class="cd-timeline-img cd-picture">
+								<img src="img/backg.jpg" alt="Picture">
+							</div> <!-- cd-timeline-img -->
+
+							<div class="cd-timeline-content">
+								<h2 ng-repeat="i in response_blog">{{i.title+', '+i.msg}}</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste</p>
+								<a href="#0" class="cd-read-more">Read more</a>
+								<div class="cd-date">
+									Jan 14
+								</div>
+							</div> <!-- cd-timeline-content -->
+						</div> <!-- cd-timeline-block -->
+					</div>
+				</div>
+			</div>
+		</section>
 	</div>
 
 	<script src="js/lightbox.min.js"></script>
