@@ -78,7 +78,7 @@ maxwellmandela.controller("ContactController", function($scope){
         {
 			"contact_icon":"mdi mdi-email",
 			"color":"icon--red",
-			"contact_title":"maxwell.mandela@webscreationsdesign.com"
+			"contact_title":"Work Email: maxwell.mandela@webscreationsdesign.com"
 		},
 		{
 			"contact_icon":"mdi mdi-phone",
