@@ -62,10 +62,6 @@
 		            <a href="#about" class="btn btn--l btn--black btn--icon" lx-ripple lx-tooltip="About Me" tooltip-position="right"><i class="mdi mdi-information" ></i></a>
 
 		            <a href="#contact" class="btn btn--l btn--green btn--icon" lx-ripple lx-tooltip="Contact me" tooltip-position="right"><i class="mdi mdi-phone"></i></a>
-
-		            <a href="#showcase" class="btn btn--l btn--red btn--icon" lx-ripple lx-tooltip="I'm working on" tooltip-position="right"><i class="mdi mdi-folder-image"></i></a>
-
-		            <a href="#posts" class="btn btn--l btn--orange btn--icon" lx-ripple lx-tooltip="My recent blog posts" tooltip-position="right"><i class="mdi mdi-view-list"></i></a>
 		        </div>
 		    </div>
 		</div>
@@ -167,6 +163,29 @@
 			        	</div>
 				    </div>
 			    </div>
+			</div>
+		</section>
+        
+        <section id="contact" ng-controller="ContactController">
+			<div class="tc-white-1 mt++" flex-container="row" flex-gutter="24">
+			    <div flex-item="3" class="p+ any-text"></div>
+
+			    <div flex-item="4" class="p+ any-text">
+			    	<span class="fs-title display-block mb">Reach Me</span>
+			        <div class="divider divider--dark"></div>
+			        <ul class="list mt++">
+			            <li class="list-row list-row--has-separator" ng-repeat="item in contact_detail">
+			                <div class="list-row__primary">
+			                    <i class="icon icon--s {{item.color}} icon--flat {{item.contact_icon}}"></i>
+			                </div>
+
+			                <div class="list-row__content">
+			                    <span>{{item.contact_title}}</span>
+			                </div>
+			            </li>
+			        </ul>
+			    </div>
+			    <div flex-item="1" class="p+"></div>
 			</div>
 		</section>
 	</div>
