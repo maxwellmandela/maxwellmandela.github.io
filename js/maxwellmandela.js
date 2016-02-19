@@ -36,8 +36,11 @@ maxwellmandela.controller("AboutMeController", function($scope){
 	$scope.iknow = [
 		{"lang":"PHP, MySQL, SQL"},
 		{"lang":"CSS3, HTML5, JS"},
-		{"lang":"Wordpress(themes+plugins), Codeigniter"},
-		{"lang":"Jquery, Bootstrap, Angular Js"}
+		{"lang":"Wordpress(themes+plugins)"},
+		{"lang": "Codeigniter"},
+		{"lang":"Jquery, Bootstrap, Angular Js"},
+		{"lang": "AWS, ESP"},
+		{"lang": "SEO"}
 	];
 
 	$scope.im_into = [
@@ -78,7 +81,7 @@ maxwellmandela.controller("ContactController", function($scope){
         {
 			"contact_icon":"mdi mdi-email",
 			"color":"icon--red",
-			"contact_title":"Work Email: maxwell.mandela@webscreationsdesign.com"
+			"contact_title":"Work Email: maxwellmandela@swap254.com"
 		},
 		{
 			"contact_icon":"mdi mdi-phone",
