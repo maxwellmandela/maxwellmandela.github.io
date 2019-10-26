@@ -1,214 +1,36 @@
 <!DOCTYPE html>
 <html ng-app="MaxwellMandela">
+
 <head>
-	<title>Maxwell Mandela</title>
+	<title>maxwellmandela</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-	<link href="css/lightbox.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/lumx.css">
-	<link rel="stylesheet" href="css/reset.css"> <!-- Reset style -->
-	<link rel="stylesheet" href="css/timeline.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 	<script src="js/jquery.min.js"></script>
-    <script src="js/velocity.min.js"></script>
-    <script src="js/moment-with-locales.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/lumx.min.js"></script>
-	<script src="js/maxwellmandela.js"></script>
 </head>
-<style type="text/css">
-	/*body { 
-	  background: url(img/backg.jpg) no-repeat center center fixed; 
-	  -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
-	}
-	.card{
-		box-shadow: 1px 1px 1px 1px #888888;
-	}*/
-	html{
-		background-color: #fff;
-	}
-	#posts .cd-timeline-content{
-		box-shadow: 0 2px 6px 0 #888888;
-	}
-	body{
-		background-color: #fff;
-	}
-	.any-text{
-		color:#606060;
 
-	}
-	a{
-		color:#056;
-		text-decoration: none;
-	}
-	div.cd-date{
-		color:#000;
-	}
-</style>
-<body id="parent" class="container-fluid" style="width:80%; margin-left:10%;">
+<body class="container">
 
-	<div id="child">
-		<div id="sticker" style="position:relative; z-index:10">
-			
-			<!-- Down direction -->
-		    <div class="fab ml">
-		        <button class="fab__primary btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Menu" tooltip-position="right">
-		            <i class="mdi mdi-menu"></i>
-		            <i class="mdi mdi-arrow-down"></i>
-		        </button>
+	<div class="col-sm-6 col-sm-offset-3">
+		<h3>Hello, I'm Max(<small>Maxwell O.</small>)</h3>
+		<p>I'm a software developer</p>
 
-		        <div class="fab__actions fab__actions--down">
-		            <a href="#about" class="btn btn--l btn--black btn--icon" lx-ripple lx-tooltip="About Me" tooltip-position="right"><i class="mdi mdi-information" ></i></a>
+		<hr>
 
-		            <a href="#contact" class="btn btn--l btn--green btn--icon" lx-ripple lx-tooltip="Contact me" tooltip-position="right"><i class="mdi mdi-phone"></i></a>
-		        </div>
-		    </div>
-		</div>
+		<h5>Some things I experiment with:</h5>
+		<small>I promise I'll put here a nice little list soon</small>
 
-		<section id="about" ng-controller="AboutMeController">
-			<div class="tc-white-1 mt++" flex-container="row" flex-gutter="24">
-			    <div flex-item="1"></div>
-			    <div flex-item="4">
-				    <div class="p+">
-				    	<div class="card">
-				    		<div class="card__img card__img--top">
-				               <a href="#" data-lightbox="maxwell" data-title="Maxwell Mandela">
-								<img class="" src="img/logo.jpg" alt="image-1" />
-								</a>
-				                <span ng-repeat="item in aboutme" class="fs-headline tc-white-1 display-block any-text">{{item.primary_data[0].name}}</span>
-				            </div>
-
-				            <div class="p+">
-				                <div class="paragraph fs-body-1 mt+ any-text">
-				                    <p ng-repeat="item in aboutme">
-				                    {{item.primary_data[0].sub_name}}
-				                    </p>
-
-				                    <div><!-- social Machine -->
-										<a href="https://twitter.com/maxmandela"><button class="btn btn--m btn--green btn--icon" lx-ripple><i class="mdi mdi-twitter"></i></button></a>
-										<a href="https://web.facebook.com/maxwell.mandela"><button class="btn btn--m btn--blue btn--icon" lx-ripple><i class="mdi mdi-facebook"></i></button>
-											<a href="https://ke.linkedin.com/in/maxwell-mandela-9a80b77b"><button class="btn btn--m btn--blue btn--icon" lx-ripple><i class="mdi mdi-linkedin"></i></button></a>
-											<a href="https://github.com/maxwellmandela"><button class="btn btn--m btn--black btn--icon" lx-ripple><i class="mdi mdi-github-circle"></i></button></a>
-									
-										<p>Lead developer and founder, <a href="www.swap254.com">swap254</a></p>
-										<p class="text text-danger;">+254716261703 | mxmandela@gmail.com</p>
-									</div>
-				                </div>
-			                </div>
-			        	</div>
-					</div>
-				</div>
-
-			    <div flex-item="4">
-				    <div class="p+">
-				    	<div class="card">
-				            <div class="p+">
-				                <strong class="fs-headline display-block any-text">About Me</strong>
-				                <div class="paragraph fs-body-1 mt+ any-text">
-				                    <p ng-repeat="item in aboutme">
-				                        {{item.primary_data[0].desc}}
-				                    </p>
-				                </div>
-				            </div>
-			        	</div>
-				    </div>
-
-				    <div class="p+">
-				    	<div class="card any-text p+">
-				            <span class="fs-title display-block mb">I'm a</span>
-					        <div class="divider divider--dark"></div>
-					        <ul class="list mt++">
-					            <li class="list-row list-row--has-separator" ng-repeat="item in iam_a">
-					                <div class="list-row__primary">
-					                    <i class="icon icon--l {{item.color}} icon--flat mdi {{item.icon}}"></i>
-					                </div>
-					                <div class="list-row__content">
-					                    <span>{{item.job}}</span>
-					                </div>
-					            </li>
-					        </ul>
-			        	</div>
-				    </div>
-			    </div>
-
-			    <div flex-item="3">
-				    <div class="p+">
-				    	<div class="card any-text p+">
-				            <span class="fs-title display-block mb">I know</span>
-					        <div class="divider divider--dark"></div>
-					        <ul class="list mt++">
-					        	<li class="list-row list-row--has-separator" ng-repeat="item in iknow">
-					                <div class="list-row__content">
-					                    <span>{{item.lang}}</span>
-					                </div>
-					            </li>
-					        </ul>
-			        	</div>
-				    </div>
-
-				    <div class="p+">
-				    	<div class="card any-text p+">
-				            <span class="fs-title display-block mb">I'm into</span>
-					        <div class="divider divider--dark"></div>
-					        <ul class="list mt++">
-					            <li class="list-row list-row--has-separator" ng-repeat="item in im_into">
-					                <div class="list-row__primary">
-					                    <i class="icon icon--l {{item.color}} icon--flat mdi {{item.icon}}"></i>
-					                </div>
-					                <div class="list-row__content">
-					                    <span>{{item.like}}</span>
-					                </div>
-					            </li>
-					        </ul>
-			        	</div>
-				    </div>
-			    </div>
-			</div>
-		</section>
-        
-        <section id="contact" ng-controller="ContactController">
-			<div class="tc-white-1 mt++" flex-container="row" flex-gutter="24">
-			    <div flex-item="3" class="p+ any-text"></div>
-
-			    <div flex-item="4" class="p+ any-text">
-			    	<span class="fs-title display-block mb">Reach Me</span>
-			        <div class="divider divider--dark"></div>
-			        <ul class="list mt++">
-			            <li class="list-row list-row--has-separator" ng-repeat="item in contact_detail">
-			                <div class="list-row__primary">
-			                    <i class="icon icon--s {{item.color}} icon--flat {{item.contact_icon}}"></i>
-			                </div>
-
-			                <div class="list-row__content">
-			                    <span>{{item.contact_title}}</span>
-			                </div>
-			            </li>
-			        </ul>
-			    </div>
-			    <div flex-item="1" class="p+"></div>
-			</div>
-		</section>
+		<p>
+			<i class="fab fa-linked-in"></i>
+			<i class="fab fa-twitter"></i>
+			<i class="fab fa-facebook"></i>
+		</p>
 	</div>
 
 	<script src="js/lightbox.min.js"></script>
 	<script src="js/jquery.sticky.js"></script>
 	<script src="js/scroll.js"></script>
-	<script src="js/main.js"></script> <!-- Resource jQuery -->
-	<script type="text/javascript">
-		$(document).ready(function(){
-		/**
-		* Make first section full height
-		* Prettifying-so to speak ;) 
-		*/
-		$('section').first().css("height", $(document).height());
-
-		/*Sticker*/
-	    $("#sticker").sticky({topSpacing:0});
-	  	});
-	</script>
+	<script src="js/main.js"></script>
 </body>
+
 </html>
