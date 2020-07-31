@@ -2,32 +2,112 @@
 <html ng-app="MaxwellMandela">
 
 <head>
-	<title>maxwellmandela</title>
+	<title>maxwellmandela - software developer</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/ca9b9e6f93.js" crossorigin="anonymous"></script>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+	<style>
+		.convos {
+			padding-top: 6%;
+			opacity: 0.2;
+			font-size: smaller
+		}
+
+		.convos:hover {
+			opacity: 0.65;
+		}
+	</style>
 </head>
 
 <body class="container">
-	<div class="col-sm-6 col-sm-offset-3" style="padding-top: 15%;">
+	<div class="col-sm-6" style="padding-top: 7%; opacity: 0.97">
+		<div class="row">
+			<img src="max.png" style="height: 60px;
+				width: 60px;
+				border-radius: 50%;
+				float: left;
+				margin-top: 1em;">
+			<div class="col-xs-10">
+				<h3>Hello, I'm Max(<small>Maxwell O.</small>)</h3>
+				<p>I'm a software developer from Nairobi(KE)</p>
+			</div>
+		</div>
 
-		<h3>Hello, I'm Max(<small>Maxwell O.</small>)</h3>
-		<p>I'm a software developer</p>
 
 		<hr>
+		Some experiments
+		<ul>
+			<li><a href="http://sss-client.herokuapp.com">GUI Scraper</a> - made from hating to do the same thing over
+				and over again</li>
+			<li><a href="https://wordpress.org/plugins/twentyfourth-wp-scraper/">The Scraper for WordPress</a> </li>
 
-		I promise I'll put here a nice little list of some things I experiment with soon</small>
+			<li> <a href="http://erp.htltechnology.co.ke/">Multi-tenancy laravel way</a> - An ERP for
+				htltechnology.co.ke
+			</li>
+			<li>Oh and I make perfect tea but do I say..</li>
+		</ul>
+
+		<hr>
+		Some technologies I use
+		<ul>
+			<li>Javascript(+ all the frontend crap spinned out of it )</li>
+			<li>Python(novice)</li>
+			<li>Php, MySq..y what I mean</li>
+			<li>Etherium, yup!</li>
+			<li>MotoGP(haha)</li>
+		</ul>
 
 		<br>
 		<br>
-		<strong>I'm all over the web</strong>
-		<p>
+		<strong>profile</strong>
+		<p style="font-size: 20px;">
 			<a href="https://www.linkedin.com/in/maxwellmandela"><i class="fab fa-linkedin"></i></a>
 			<a href="https://github.com/maxwellmandela"><i class="fab fa-github"></i></a>
 			<a href="https://www.facebook.com/maxwell.m.okoth"><i class="fab fa-facebook"></i></a>
 			<a href="https://twitter.com/maxmandela"><i class="fab fa-twitter"></i></a>
 		</p>
 	</div>
+
+	<div class="col-sm-3 col-sm-offset-3 convos">
+		<div id="pillow-talk">
+
+		</div>
+	</div>
+
+	<script>
+		let convo = [
+			{ 'WHO IS THIS MAXO?': 'Excuse me did you say macho?' },
+			{ 'NO! MAX...errr O.? wtf!': 'Oh like what I am? Or who?' },
+			{ 'WHICHEVER!?': 'Said it already!! Soft... nvm *gets angry* ugh!!' },
+			{ 'ARE YOUR NERVES LOOSE?': 'What?' },
+			{ 'BREAKDOWN, YOU HAVE': 'Break down, I dont!!! **clenches fist' },
+			{ 'MENTAL': 'Oh haha I see, intresting, *not clenching fist' },
+			{ 'WANNA TALK POLITICKS?': 'No its Pillow tips dummy' },
+			{ 'JESUS DYU KNOW ANYTHING? AT ALL?': 'Python! Duh!' },
+			{ 'NO OUTSIDE THE COMPUTER I MEAN': 'course! Pillowtiping!! f* Duh!!' },
+			{ 'OKAY! WHAT A LIFELESS CREATURE': 'What a pillow!' },
+			{ 'DO YOU WRITE JAVA?': 'Ja-what?' },
+			{ 'HAHA': 'Pillow!!' },
+		]
+
+		let output = ''
+
+		convo.map((value, index) => {
+			let weird_statement = Object.keys(value)[0]
+			let weird_response = value[weird_statement]
+
+			let html = `
+			<span class="convo">
+				<strong>${weird_statement}</strong>
+				<p>${weird_response}</p>
+			</span>
+			`
+			output += html
+		})
+
+		document.getElementById('pillow-talk').innerHTML = output 
+	</script>
 </body>
 
 </html>
